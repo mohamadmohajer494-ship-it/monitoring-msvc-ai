@@ -1,0 +1,61 @@
+-IC:/Qt/6.8.3/msvc2022_64/mkspecs/win32-msvc
+-ID:/Monitoring
+-ID:/protobuf-msvc/include
+-ID:/opus-msvc/include
+-ID:/speexdsp-msvc/include
+-ID:/cdf
+-ID:/Monitoring/Connection
+-ID:/Monitoring/Includes
+-ID:/Monitoring/Layouts
+-ID:/Monitoring/Navigation
+-ID:/Monitoring/Plots
+-ID:/Monitoring/Widgets
+-ID:/Monitoring/Windows
+-ID:/Monitoring/PlotSource/implot
+-ID:/Monitoring/PlotSource/imgui
+-ID:/Monitoring/PlotSource/imgui/backends
+-IC:/Qt/6.8.3/msvc2022_64/include
+-IC:/Qt/6.8.3/msvc2022_64/include/QtOpenGLWidgets
+-IC:/Qt/6.8.3/msvc2022_64/include/QtAxContainer
+-IC:/Qt/6.8.3/msvc2022_64/include/QtWidgets
+-IC:/Qt/6.8.3/msvc2022_64/include/QtLocation
+-IC:/Qt/6.8.3/msvc2022_64/include/QtPositioningQuick
+-IC:/Qt/6.8.3/msvc2022_64/include/QtQuickShapes
+-IC:/Qt/6.8.3/msvc2022_64/include/QtQuickShapes/6.8.3
+-IC:/Qt/6.8.3/msvc2022_64/include/QtQuickShapes/6.8.3/QtQuickShapes
+-IC:/Qt/6.8.3/msvc2022_64/include/QtQuick/6.8.3
+-IC:/Qt/6.8.3/msvc2022_64/include/QtQuick/6.8.3/QtQuick
+-IC:/Qt/6.8.3/msvc2022_64/include/QtQuick
+-IC:/Qt/6.8.3/msvc2022_64/include/QtOpenGL
+-IC:/Qt/6.8.3/msvc2022_64/include/QtGui/6.8.3
+-IC:/Qt/6.8.3/msvc2022_64/include/QtGui/6.8.3/QtGui
+-IC:/Qt/6.8.3/msvc2022_64/include/QtMultimedia
+-IC:/Qt/6.8.3/msvc2022_64/include/QtGui
+-IC:/Qt/6.8.3/msvc2022_64/include/QtSql
+-IC:/Qt/6.8.3/msvc2022_64/include/QtQmlMeta/6.8.3
+-IC:/Qt/6.8.3/msvc2022_64/include/QtQmlMeta/6.8.3/QtQmlMeta
+-IC:/Qt/6.8.3/msvc2022_64/include/QtQmlMeta
+-IC:/Qt/6.8.3/msvc2022_64/include/QtQmlModels/6.8.3
+-IC:/Qt/6.8.3/msvc2022_64/include/QtQmlModels/6.8.3/QtQmlModels
+-IC:/Qt/6.8.3/msvc2022_64/include/QtQmlModels
+-IC:/Qt/6.8.3/msvc2022_64/include/QtQmlWorkerScript/6.8.3
+-IC:/Qt/6.8.3/msvc2022_64/include/QtQmlWorkerScript/6.8.3/QtQmlWorkerScript
+-IC:/Qt/6.8.3/msvc2022_64/include/QtQmlWorkerScript
+-IC:/Qt/6.8.3/msvc2022_64/include/QtQml/6.8.3
+-IC:/Qt/6.8.3/msvc2022_64/include/QtQml/6.8.3/QtQml
+-IC:/Qt/6.8.3/msvc2022_64/include/QtQml
+-IC:/Qt/6.8.3/msvc2022_64/include/QtNetwork
+-IC:/Qt/6.8.3/msvc2022_64/include/QtSerialPort
+-IC:/Qt/6.8.3/msvc2022_64/include/QtPositioning
+-IC:/Qt/6.8.3/msvc2022_64/include/QtQmlIntegration
+-IC:/Qt/6.8.3/msvc2022_64/include/QtCore/6.8.3
+-IC:/Qt/6.8.3/msvc2022_64/include/QtCore/6.8.3/QtCore
+-IC:/Qt/6.8.3/msvc2022_64/include/QtCore
+-IC:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include
+-IC:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\ATLMFC\include
+-IC:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include
+-IC:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt
+-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\um
+-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\shared
+-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\winrt
+-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\cppwinrt
