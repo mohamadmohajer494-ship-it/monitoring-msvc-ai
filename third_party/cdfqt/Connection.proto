@@ -1,0 +1,570 @@
+syntax = "proto3";
+enum DFMode
+{
+FixMode = 0;
+MemoryScanMode = 1;
+SubRangeScanMode = 2;
+FullrangeScanMode = 3;
+}
+enum BANDWIDTH
+{
+_DFBW_1_KHz = 0;
+_DFBW_15_KHz = 1;
+_DFBW_25_KHz = 2;
+_DFBW_50_KHz = 3;
+_DFBW_100_KHz = 4;
+_DFBW_150_KHz = 5;
+_DFBW_250_KHz = 6;
+_DFBW_500_KHz = 7;
+_DFBW_1_MHz = 8;
+_DFBW_1M5_MHz = 9;
+_DFBW_2_MHz = 10;
+_DFBW_4_MHz = 11;
+_DFBW_33_MHz = 12;
+_DFBW_10_MHz = 13;
+_DFBW_20_MHz = 14;
+_DFBW_200_KHz = 15;
+_DFBW_WB = 16;
+_DFBW_50_MHz = 17;
+_DFBW_100_MHz = 18;
+_DFBW_200_MHz = 19;
+_DFBW_40_MHz = 40;
+_DFBW_80_MHz = 80;
+}
+message DFarameters {
+string name = 1;
+double Azimuth = 2;
+double Quality = 3;
+double level = 4;
+}
+message ComputerParameters
+{
+string name = 1;
+string LanName = 2;
+string IpAddress = 3;
+int32 Mtu = 4;
+int32 port = 5;
+}
+message SystemParameters {
+enum AGC
+{
+AGC_OFF = 0;
+AGC_FAST = 1;
+AGC_MEDIUM = 2;
+AGC_SHORT = 3;
+AGC_LONG = 4;
+AGC_Count = 5;
+}
+enum RFHEAD
+{
+dummy = 0;
+HL = 1;
+HS = 2;
+Int = 3;
+Attenuator = 4;
+RFHead_Count = 5;
+}
+enum DEMOD
+{
+AM = 0;
+FM = 1;
+PM = 2;
+}
+enum FFTPOINT
+{
+FFTdummy = 0;
+FFTSample_512 = 512;
+FFTSample_1024 = 1024;
+FFTSample_2048 = 2048;
+
+}
+enum FILTERS
+{
+_15KHz = 0;
+_3KHz = 1;
+_7_5KHz = 2;
+_2KHz = 3;
+_1KHz = 4;
+_125KHz = 12;
+_250KHz = 13;
+Filter_Count = 7;
+}
+enum AnalogBand
+{
+Band1 = 0;
+Band2 = 1;
+Band3 = 2;
+Band4 = 3;
+}
+enum AntPOL
+{
+_Vertical = 0;
+_Horizontal = 1;
+}
+enum ANTAMP
+{
+_amp=0;
+_line=1;
+}
+enum ANTENNALENGTH
+{
+_long = 0;
+_short =1;
+}
+string name = 1;
+AGC agcData = 2;
+double mgcData = 3;
+RFHEAD rfhead = 4;
+DEMOD demod = 5;
+FFTPOINT Fft = 6;
+bool SetSquelch = 7;
+int32 volume = 8;
+double Average = 9;
+BANDWIDTH bandwidth = 10;
+FILTERS filter = 11;
+double PhaseAverage = 12;
+bool AutoThreshold=13;
+int32 AzimuthHistogram = 14;
+double Quality=15;
+AnalogBand AnalogFilter = 16;
+AntPOL AntennaPolarization = 17;
+ANTAMP AntennaAmp = 18;
+ANTENNALENGTH AntennaLength = 19;
+int32 RFAttenator = 20;
+int32 IFAttenator = 21;
+}
+message SystemParametersElint
+{
+string name = 1;
+bool ElintMaxhold = 2;
+int32 ThresholdLow =3;
+BANDWIDTH ElintBandwidth = 4;
+int32 ThresholdLimit =5;
+int32 ThresholdHigh = 6;
+int32 ADCLowRef = 7;
+int32 ADCHighRef = 8;
+}
+message Frequency
+{
+string name = 1;
+double freq = 2;
+}
+message Threshold
+{
+string name = 1;
+int32 thr = 2;
+}
+message AudioState
+{
+string name = 1;
+bool audio = 2;
+}
+message GPSParameter{
+enum FRAMEWORK{
+MOBIN =0;
+NAVI=1;
+NASR=2;
+NMEA0813=3;
+FMS=4;
+FPGA=5;
+PLUGIN=6;
+}
+string name  = 1;
+double Latitude = 2;
+double longitude = 3;
+bool autocompass= 4;
+bool autogps = 5;
+bool isfpgauart =6;
+double angleoffset = 7;
+double northoffset = 8;
+FRAMEWORK framework = 9;
+int32 baudrate = 10;
+string comport = 11;
+}
+message AntennaState
+{
+string name = 1;
+bool AutoDetect =2;
+bool ADD050 = 3;
+bool ADD150 = 4;
+bool ADD078 = 5;
+bool ADD070 = 6;
+bool ADD327 = 7;
+bool ADD207 = 8;
+bool ADD107 = 9;
+bool ADD226 = 10;
+bool ADD297 = 11;
+bool ADD286 = 12;
+bool ADD557 = 13;
+bool IsDualPol = 14;
+}
+message AntennaOFFset
+{
+ string name = 1;
+ double ADD050 = 2;
+ double ADD150 = 3;
+ double ADD078 = 4;
+ double ADD070 = 5;
+ double ADD327 = 6;
+ double ADD207 = 7;
+ double ADD107 = 8;
+ double ADD226 = 9;
+ double ADD297 = 10;
+ double ADD286 = 11;
+ double ADD557 = 12;
+}
+message AntennaParameters
+{
+string name = 1;
+int32 PageNumber = 2;
+int32 channelNumber = 3;
+int32 SwitchSequence = 4;
+bool Elint=5;
+}
+message Defaults
+{
+enum SYSTEMTYPE
+{
+mob = 0;
+miI = 1;
+miII = 2;
+rosh =3;
+elc=4;
+nas=5;
+sin=6;
+mahIII=7;
+bin=8;
+}
+enum BW
+{
+_20MHz = 0;
+_40MHz = 1;
+_80MHz = 2;
+_50MHz = 3;
+_200MHz = 4;
+}
+string name = 1;
+SYSTEMTYPE systemtype = 2;
+BW WideBandBanwith = 3;
+int32 MinimumFreqRange = 4;
+int32 MaximumFreqRange =5;
+bool Is6GHz = 6;
+bool IsSuperRes = 7;
+bool revert = 8;
+DFMode DFstate = 9;
+}
+message ClassificationState
+{
+enum ClassificationAlgoritm
+{
+ExpertAlg = 0;
+HoppingSequence = 1;
+TimeTagAlg =2;
+Link16Alg = 3;
+}
+string name = 1;
+bool state = 2;
+ClassificationAlgoritm Algoritm = 3;
+}
+message ClassificationDataRdy
+{
+enum SINGALMODE
+{
+Fix = 0;
+DS = 1;
+Hopping = 2;
+Link16 = 3;
+}
+string name = 1;
+SINGALMODE SignalMode = 2;
+int32 startIndex = 3;
+int32 StopIndex = 4;
+int32 CenterIndex = 5;
+double Azimuth = 6;
+}
+message DFstate
+{
+string name = 1;
+bool DFStartStop = 2;
+}
+message TransferData
+{
+enum TRANSDATA
+{
+_0Percent = 0;
+_10Percent = 10;
+_20Percent = 20;
+_50Percent = 50;
+_75Percent = 75;
+_100Percent = 100;
+}
+string name = 1;
+TRANSDATA TransferDataRange = 2;
+bool TransferAudio = 3;
+bool TransferPSD = 4;
+bool TransferDOA = 5;
+bool TransferAntennaResult = 6;
+bool TransferDFParameters = 7;
+bool TransferGPSParameters = 8;
+bool TransferCompassParameters = 9;
+bool TransferAzimuthCalculation = 10;
+bool TransferError = 11;
+bool TransferFixWideBandPSDData = 12;
+bool TransferPDWData = 13;
+bool TransferIQData = 14;
+bool TransferIFData = 15;
+bool TransferAmrData = 16;
+bool TransferHistogramDoa = 17;
+}
+message MemScanParam
+{
+string name = 1;
+double Frequency = 2;
+double level = 3;
+}
+message MemScanState
+{
+string name = 1;
+bool state = 2;
+int32 time = 3;
+}
+message SubScanParam
+{
+string name = 1;
+double StartFrequencyMHz = 2;
+double StopFrequencyMHz = 3;
+int32 StepFrequecnyKHz = 4;
+double level = 5;
+}
+message SubScanState
+{
+string name = 1;
+bool state = 2;
+int32 time = 3;
+}
+message RemoveScansTables
+{
+enum MODE
+{
+Memory = 0;
+SUBRANGE = 1;
+Both =2;
+}
+string name = 1;
+MODE RemoveData = 2;
+}
+message FullRangeScanParams
+{
+string name = 1;
+double StartFrequencyMHz = 2;
+double StopFrequencyMHz = 3;
+bool state = 4;
+}
+message DFModeFindings
+{
+enum DFMODFND
+{
+normal = 0;
+cont = 1;
+gate = 2;
+}
+string name = 1;
+DFMODFND mode = 2;
+}
+message SmartModeParams
+{
+string name = 1;
+int32 StartIndex = 2;
+int32 StopIndex = 3;
+bool state = 4;
+}
+message ManualModeParams
+{
+string name = 1;
+int32 StartIndex = 2;
+int32 StopIndex = 3;
+bool state = 4;
+}
+message Maxholds
+{
+string name = 1;
+bool state = 2;
+double delayTime =3;
+double RefreshTime=4;
+}
+message IFrecord
+{
+string name = 1;
+string SaveName = 2;
+bool state = 3;
+int32 timeMs = 4;
+}
+message DFlog
+{
+enum WHICHPARAMS
+{
+_nothing =0;
+_direction =1;
+_phase = 2;
+_gps = 4;
+_audio =8;
+}
+string name = 1;
+bool state =2;
+int32 params = 3;
+string addressfile = 4;
+}
+message PositionFinding
+{
+enum ALGORITHM
+{
+_ls = 0;
+_lsslow = 1;
+_gbfast = 2;
+_gbslow = 3;
+_gbwide = 4;
+}
+string name = 1;
+bool state = 2;
+ALGORITHM alg = 3;
+}
+message GetAllDFConfig
+{
+string name = 1;
+}
+message ResetSystem
+{
+enum RESET
+{
+_softreset = 0;
+_hardrest = 1;
+}
+string name = 1;
+RESET resetmode = 2;
+}
+message FileVersion
+{
+string name = 1;
+string fileversion = 2;
+}
+message SystemError
+{
+string name = 1;
+string error =2;
+}
+message Calibration
+{
+string name = 1;
+bool coreon = 2;
+int32 gain = 3;
+}
+message Bite
+{
+string name = 1;
+bool state = 2;
+}
+message InstallDpkg
+{
+string name = 1;
+string DpkgName = 2;
+string Address = 3;
+}
+message CleanStorage
+{
+string name = 1;
+}
+message Channelizer
+{
+string name = 1;
+bool state = 2;
+repeated double freq = 3;
+repeated double bw = 4;
+repeated int32 delay = 5;
+}
+message Amr
+{
+string name = 1;
+bool state = 2;
+}
+message AudioCodec
+{
+enum CodecTools
+{
+_opus = 0;
+_mp3 = 1;
+_ffmpeg =2;
+
+}
+enum CodecPower
+{
+_minimumPow = 0;
+_moderatePow = 1;
+_MaximumPow = 2;
+}
+string name = 1;
+bool state = 2;
+CodecTools codectools = 3;
+CodecPower codecpower = 4;
+}
+message ShutDown
+{
+string name = 1;
+bool areyousure =2;
+}
+message SystemMode
+{
+string name =1;
+DFMode dfmod =2;
+}
+message AzimuthHistogram
+{
+enum histogramMode
+{
+_CenterHistogramM=0;
+_FullHistogramM=1;
+_SelecAreaHistogramM=2;
+}
+string name=1;
+bool state=2;
+int32 startindex=3;
+int32 stopindex = 4;
+int32 MinDoa =5;
+int32 MaxDoa =6;
+histogramMode hist=7;
+}
+message AzimuthBlanking
+{
+double StartAzimuth=1;
+double StopAzimuth=2;
+}
+message AzimuthBlankings
+{
+string name = 1;
+bool state = 2;
+repeated AzimuthBlanking azimuthblankings = 3;
+}
+message FrequencyOffset
+{
+double StartFrequencyMHz=1;
+double StopFrequencyMHz=2;
+double Offset=3;
+}
+message FrequencyOffsets
+{
+string name = 1;
+repeated FrequencyOffset frequencyoffsets = 2;
+}
+message FrequencyOffsetMode
+{
+enum OFFSETMODES{
+_FreqOffset=0;
+_AntennaOffset=1;
+}
+string name = 1;
+OFFSETMODES offsetMode =2;
+}
+message IQPDWMode
+{
+string name = 1;
+bool enableIQPDWMode =2;
+}
